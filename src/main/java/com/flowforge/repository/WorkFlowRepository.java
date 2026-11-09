@@ -8,4 +8,5 @@ import com.flowforge.model.WorkFlow;
 @Repository 
 public interface WorkFlowRepository extends JpaRepository<WorkFlow, Long> {
 
+    public boolean existsByWorkflowId(String workflowId);
 }

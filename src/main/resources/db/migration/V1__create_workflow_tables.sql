@@ -7,6 +7,13 @@ CREATE TABLE workflows (
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
+ALTER TABLE workflows 
+ADD COLUMN workflow_id VARCHAR(11);
+
+ALTER TABLE workflows
+ADD CONSTRAINT uk_workflows_workflow_id
+UNIQUE (workflow_id);
+
 CREATE TABLE workflow_versions (
     id UUID PRIMARY KEY,
     workflow_id UUID NOT NULL REFERENCES workflows(id),

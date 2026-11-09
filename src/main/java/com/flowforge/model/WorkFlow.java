@@ -26,7 +26,7 @@ public class WorkFlow {
     @Column(name = "id", updatable = false, nullable = false)
     private UUID id;
 
-    @Column(name = "workflow_id", nullable = false, unique = true)
+    @Column(name = "workflow_id", nullable = false, length = 11, unique = true)
     private String workflowId;
 
     @Column(name = "name", nullable = false, length = 150)
